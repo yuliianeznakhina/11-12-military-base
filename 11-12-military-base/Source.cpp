@@ -48,8 +48,14 @@ int main()
 		cout << "\nEnter maximum number of people on the bus: ";
 		cin >> max_people;
 		ptr = new Bus(petrol_amount, tank_volume, _people, max_people);
-		ptr->Leave(base);
-		cout << "\nOne bus has left.";
+		if (ptr->Leave(base))
+		{
+			cout << "\nOne bus has left.";
+		}
+		else
+		{
+			cout << "\nBus cannot leave.";
+		}
 		break;
 	case 4:
 		cout << "\nEnter current amount of petrol on the truck: ";
@@ -74,8 +80,14 @@ int main()
 		cout << "\nEnter maximum amount of cargo on the truck: ";
 		cin >> max_load;
 		ptr = new Truck(petrol_amount, tank_volume, _load, max_load);
-		ptr->Leave(base);
-		cout << "\nOne truck has left.";
+		if (ptr->Leave(base))
+		{
+			cout << "\nOne truck has left.";
+		}
+		else
+		{
+			cout << "\nTruck cannot leave.";
+		}
 		break;
 	}
 }
